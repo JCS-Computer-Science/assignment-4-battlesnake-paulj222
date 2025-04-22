@@ -41,17 +41,25 @@ function handleStart(request, response) {
 function handlemove(request, response) {
   let gameData = request.body
 
+
+
   let safeMove = ['up','down','left','right']
   let move = safeMove[Math.floor(Math.random()*safeMove.length)]
   console.log('move'+ move)
   response.status(200).send({
     move:move
   })
+  
 } 
 
 //TODO: respond to POST requests on "/end", which signals the end of a game. Your response itself is ignored, 
 //      but must have status code "200" the request body will contain objects representing the game
 //      https://docs.battlesnake.com/api/requests/end
+function handleEnd(request, response) {
+  let gameData = request.body
+  console.log('END')
+  response.status(200).send('ok')
+}
 
 const host = '0.0.0.0';
 const port = process.env.PORT || 8000;
