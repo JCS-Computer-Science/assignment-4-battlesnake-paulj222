@@ -6,7 +6,7 @@ app.use(express.json());
 const config = {
   apiversion: "1",
   author: "",
-  color: "#0000ff",
+  color: "#a832a0",
   head: "workout",
   tail: "mlh-gene",
 }

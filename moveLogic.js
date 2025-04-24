@@ -76,7 +76,7 @@ export default function move(gameState){
             if (xDis < 0) {bestMoves.left = true;} else if (xDis > 0){bestMoves.right = true;}
             if (yDis < 0) {bestMoves.down = true;} else if (yDis > 0){bestMoves.up = true;}
     }
-    let isHungry = gameState.you.health < 80  || gameState.you.body.length%2 != 0;
+    let isHungry = gameState.you.health < 90  || gameState.you.body.length%2 != 0;
     if(nearMid == false && gameState.you.health>8 && gameState.you.body.length > 4){isHungry = false};
     if (isHungry && gameState.board.food.length > 0){
         let closestFood = gameState.board.food[0];
@@ -98,11 +98,9 @@ export default function move(gameState){
             }
         }
         moveTo(closestFood);
-    } else if (nearMid){
+    } else{
         moveTo(myTail);
-    } else {
-        moveTo(center);
-    }
+    } 
     let safeMoves = Object.keys(moveSafety).filter(
         dir => moveSafety[dir] && kindaSafe[dir]
     );
