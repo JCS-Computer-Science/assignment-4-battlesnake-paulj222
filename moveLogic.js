@@ -117,3 +117,4 @@ export default function move(gameState){
         : safeMoves[Math.floor(Math.random() * safeMoves.length)];
     return { move: nextMove };
 }
+console.log("hello world")
