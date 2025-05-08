@@ -115,6 +115,7 @@ export default function move(gameState){
     const nextMove = (prioritizedMoves.length > 0)
         ? prioritizedMoves[Math.floor(Math.random() * prioritizedMoves.length)]
         : safeMoves[Math.floor(Math.random() * safeMoves.length)];
-    return { move: nextMove };
+    
+        console.log(`move ${gameState.turn} : ${nextMove}`);
+        return { move: nextMove };
 }
-console.log("hello world")
